@@ -1,15 +1,19 @@
 <template>
   <div id="app" @touchmove.prevent>
     <i-head></i-head>
+    <tab></tab>
   </div>
 </template>
 
 <script>
 import IHead from 'components/i-head/i-head'
+import Tab from 'components/tab/tab'
+
 import 'common/stylus/reset.styl'
 export default {
   components: {
-    IHead
+    IHead,
+    Tab
   }
 }
 </script>
@@ -24,6 +28,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $color-background;
+  background: $color-background;
 }
 </style>

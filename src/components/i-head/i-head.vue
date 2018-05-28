@@ -3,11 +3,9 @@
     <!-- <slot></slot> -->
     <div class="logo"></div>
     <h1 class="title">itingkong</h1>
-    <!-- <router-link to="/user" tag="div" class="user"> -->
-      <div class="user">
-        <i class="icon-user"></i>
-      </div>
-    <!-- </router-link> -->
+    <router-link to="/user" tag="div" class="user">
+      <i class="icon-user"></i>
+    </router-link>
   </div>
 </template>
 
@@ -43,7 +41,7 @@ export default{
       top: 0
       right: 0
       height 100%
-      width 40px
+      width 44px
       padding 12px
       .icon-user
         display block
