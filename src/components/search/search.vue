@@ -1,9 +1,9 @@
 <template>
-  <div class="wrap">recommend</div>
+  <div class="wrap">search</div>
 </template>
 
 <script>
-export default{}
+export default {}
 </script>
 
 <style lang="stylus" scoped>

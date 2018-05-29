@@ -2,6 +2,7 @@
   <div id="app" @touchmove.prevent>
     <i-head></i-head>
     <tab></tab>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -29,5 +30,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background: $color-background;
+  color: $color-text-ll
 }
 </style>
