@@ -88,6 +88,13 @@ export default {
     scrollToElement () {
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
     }
+  },
+  watch: {
+    data () {
+      setTimeout(() => {
+        this.refresh()
+      }, this.refreshDelay)
+    }
   }
 }
 </script>

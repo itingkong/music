@@ -6,6 +6,7 @@
 
 <script>
 import Scroll from 'base/scroll/scroll'
+import Slider from 'base/slider/slider'
 
 export default{
   components: {
