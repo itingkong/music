@@ -11,6 +11,14 @@
             </div>
           </slider>
         </div>
+        <div class="recommend-list">
+          <h1 class="list-title">热门歌单推荐</h1>
+          <ul>
+            <li class="item" v-for="(item, index) in discList" :key="index" @click="selectItem(item)">
+              <img v-lazy="item.imgurl">
+            </li>
+          </ul>
+        </div>
       </div>
     </scroll>
   </div>
@@ -18,14 +26,15 @@
 
 <script>
 import Slider from 'base/slider/slider'
-// import Loading from 'base/loading/loading'
+import Loading from 'base/loading/loading'
 import Scroll from 'base/scroll/scroll'
 import {getRecommend, getDiscList} from 'api/recommend'
-// import {playlistMixin} from 'common/js/mixin'
+import {playlistMixin} from 'common/js/mixin'
 import {ERR_OK} from 'api/config'
 import {mapMutations} from 'vuex'
 
 export default {
+  mixins: [playlistMixin],
   data () {
     return {
       recommends: [],
@@ -70,6 +79,7 @@ export default {
   },
   components: {
     Slider,
+    Loading,
     Scroll
   }
 }
@@ -79,15 +89,31 @@ export default {
 @import "~common/stylus/variable"
 
 .recommend
-  width 100%
   position fixed
+  width 100%
   top 88px
   bottom 0
-    .recommend-content
-      height 100%
+  .recommend-content
+    height 100%
+    overflow hidden
+    .slider-wrapper
+      position relative
+      width 100%
       overflow hidden
-      .slider-wrapper
-        position relative
-        width 100%
-        overflow hidden
+    .recommend-list
+      background $color-background
+      .list-title
+        height 65px
+        line-height 65px
+        text-align center
+        font-size $font-size-medium
+        color $color-theme
+      .item
+        display flex
+        align-items center
+        padding 0 20px 20px 20px
+        img
+          width 60px
+          height 60px
+          padding-right 20px
 </style>
